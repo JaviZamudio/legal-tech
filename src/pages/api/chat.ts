@@ -38,10 +38,9 @@ export default async function handler(
     confiabilidad y eficiencia`
   }];
 
-  const Messages ({
-    
-  })
+  const messages = req.body.messageStack;
 
+  
   
   try {
     const completion = await openai.createChatCompletion({
