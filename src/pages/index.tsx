@@ -13,12 +13,12 @@ export default function Home() {
         <title>LegalTech</title>
         <meta name="description" content="Sitio para consulta inteligente y resolucion de problemas legales" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/Logo.png" />
       </Head>
 
-      <header>
+      <header className={styles.header}>
         <Link href="/" className={styles.logo}>
-          <Image src="/images/logo.png" alt="Logo" width={200} height={200} />
+          <Image src="/images/Logo.png" alt="Logo" width={200} height={200} />
           <h1 className={styles.logoTitle}>
             LegalTech
           </h1>
