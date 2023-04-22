@@ -61,16 +61,13 @@ export default function HomeUser() {
       <Header>
         <HeaderLink href="/home-lawyer" valor="Chat" />
         <HeaderLink href="/casos" valor="Mis Casos" />
-        <HeaderLink href="/documentos " valor="Ducumentos generados" />
+        <HeaderLink href="/home-lawyer/#" valor="Ducumentos generados" />
 
         <Image src="https://api.dicebear.com/6.x/thumbs/svg?seed=Bandit" alt="User" width={40} height={40} className={styles.userImage} />
       </Header>
 
       <main>
         <div className={styles.chat}>
-          <Link href="/linkedin" className={styles.goAbogados}>
-            Contratar un abogado
-          </Link>
           {messages.length === 0 &&
             <div className={styles.chatBackground}>
               <h2 >Nuevo Chat</h2>
