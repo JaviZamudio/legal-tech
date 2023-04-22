@@ -47,7 +47,7 @@ export default async function handler(
       ],
     });
 
-    console.log(completion.data.choices[0].message);
+    // console.log(completion.data.choices[0].message);
     return res.status(200).json({ completion: completion.data.choices[0].message });
   } catch (error) {
     console.log(error);

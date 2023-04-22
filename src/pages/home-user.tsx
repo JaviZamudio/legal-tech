@@ -13,26 +13,27 @@ export default function HomeUser() {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setMessages([...messages, { role: "user", content: message }]);
-    setMessage("");
+    console.log(message);
+
+    setMessages(current => [...current, { role: "user", content: message }]);
+
     setLoading(true);
 
-    // const response = await fetch("/api/chat", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ message }),
-    // });
-
-    // const body = await response.json();
+    fetch("/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ messageStack: messages }),
+    }).then(response => response.json()).then(body => {
+      console.log(body);
+      setMessages(current => [...current, body.completion]);
+      setLoading(false);
+    });
     
-    // console.log(body);
-
-    // setMessages([...messages, { role: "assistant", content: body.message }]);
-    setLoading(false);
+    setMessage("");
   };
 
   return (
@@ -58,17 +59,16 @@ export default function HomeUser() {
       </header>
 
       <main>
-        <div className={styles.nuevoChat}></div>
-                
         <div className={styles.chat}>
+          <Link href="/abogados" className={styles.goAbogados}>
+            Contratar un abogado
+          </Link>
           {messages.length === 0 &&
             <div className={styles.chatBackground}>
-              <Link href="/abogados" className={styles.goAbogados}>
-                Contratar un abogado
-              </Link>
-              <h2>Nuevo Chat</h2>
+              <h2 >Nuevo Chat</h2>
               <h3>Legal, Facil y Accesible</h3>
               <div className={styles.ejemplos}>
+
                 <div className={styles.ejemplo}>
                   <Image src="/images/crearContrato.png" alt="Crear Contrato" width={200} height={200} />
                   <h3>Crear Contrato</h3>
@@ -76,6 +76,7 @@ export default function HomeUser() {
                     "Crea un contrato de compra-venta."
                   </p>
                 </div>
+
                 <div className={styles.ejemplo}>
                   <Image src="/images/estrategiaJuridica.png" alt="Contrato Laboral" width={200} height={200} />
                   <h3>Contrato Laboral</h3>
@@ -83,6 +84,7 @@ export default function HomeUser() {
                     "Crea un contrato para contratar a un empleado."
                   </p>
                 </div>
+
                 <div className={styles.ejemplo}>
                   <Image src="/images/contactoAbogados.png" alt="Asistencia Legal" width={200} height={200} />
                   <h3>Asistencia Legal</h3>
@@ -94,11 +96,13 @@ export default function HomeUser() {
             </div>
           }
 
-          {messages.map((message, index) => (
-            <div key={index} className={message.role === "user" ? styles.userMessage : styles.assistantMessage}>
-              <p>{message.content}</p>
-            </div>
-          ))}
+          <div className={styles.conversacion}>
+            {messages.map((message, index) => (
+              <div key={index} className={message.role === "user" ? styles.userMessage : styles.assistantMessage}>
+                <p>{message.content}</p>
+              </div>
+            ))}
+          </div>
 
           <form onSubmit={handleSubmit} className={styles.chatForm}>
             <input type="text" placeholder="Escribe un mensaje" value={message} onChange={(e) => setMessage(e.target.value)} />
@@ -107,7 +111,7 @@ export default function HomeUser() {
             </button>
           </form>
         </div>
-      
+
         <p className={styles.terminos}>
           *Al usar este Chat, aceptas nuestros términos y condiciones de uso, que puedes consultar <span>aquí</span>.
         </p>

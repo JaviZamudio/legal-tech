@@ -14,6 +14,19 @@
     font-size: 1.2rem;
   }
 
+  nav ul li{
+    list-style: none;
+  }
+
+  nav ul li a{
+    text-decoration: none;
+    color: white;
+  }
+
+  nav ul li a:hover{
+    color: #00B4D8;
+  }
+
   .logo{
     display: flex;
     justify-content: center;
@@ -66,8 +79,8 @@
   
   .boton {
     padding: 5px;
-    background-color: #D9D9D9;
-    color: #1B262C;
+    background-color: #EFEFEF;
+    color: black;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -85,7 +98,7 @@
 }
 
 .acciones{  
-  padding: 20px 0;
+  padding: 70px 0;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -102,7 +115,7 @@
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
-  padding: 20px 0;
+  padding: 50px 0;
 
   .caracteristica{
     width: 30%;
