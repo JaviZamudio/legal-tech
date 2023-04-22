@@ -2,25 +2,23 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { Configuration, OpenAIApi } from "openai";
 
 export default async function handler(
-  req: NextApiRequest,
+  req: NextApiRequest & { body: { messageStack: any[] } },
   res: NextApiResponse
 ) {
 
-  console.log(req.body.messsgeStack);
   const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
   });
   const openai = new OpenAIApi(configuration);
 
-  const x = [{
+  const abogados = [{
     nombre: "Juan",
     edad: 20,
     especialidades: ["programacion", "diseño"],
     tasaExito: 0.9,
   }];
 
-  const sy = [{
-    context: `Eres un experto en asesoría legal de chat
+  const context = `Eres un experto en asesoría legal de chat
     de intelegencia artificial, 
     debes brindarle al usuario la estrategia 
     legal más efectiva para su caso, brindando consejos
@@ -35,19 +33,18 @@ export default async function handler(
     Para la recomendación de un abogado que pueda abordar el caso
     sará necesario determinar que el abogado sea competente para abordar
     el caso, considerando su especialidad, asi como su nivel de 
-    confiabilidad y eficiencia`
-  }];
+    confiabilidad y eficiencia`;
 
-  const messages = req.body.messageStack;
+  const { messageStack } = req.body; // [{ role: "user", content: "Hola" }]
 
-  
-  
   try {
     const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: [
-        {role: "system", content: "Hello "+JSON.stringify(x)},
-        { role: "user", content: "Hello world" }],
+        { role: "system", content: context },
+        { role: "system", content: "Abogados en sistema: " + JSON.stringify(abogados) },
+        ...messageStack,
+      ],
     });
 
     console.log(completion.data.choices[0].message);

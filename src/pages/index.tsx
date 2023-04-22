@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,7 @@ export default function Home() {
 
       <header className={styles.header}>
         <Link href="/" className={styles.logo}>
-          <Image src="/images/Logo.png" alt="Logo" width={200} height={200} />
+          <Image src="/images/Logo.png" alt="Logo" width={60} height={60} />
           <h1 className={styles.logoTitle}>
             LegalTech
           </h1>
@@ -37,35 +38,36 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.hero}>
+          <Image src="/images/hero_img.png" alt="Hero" fill className={styles.bg} />
           <h1 className={styles.title}>
-            Bienvenido a <span>LegalTech</span>
+            Servicios de contratación de abogados y consultoría con IA
           </h1>
           <h2 className={styles.motto}>
-            Resuelve tus problemas legales y recibe asesoramiento
+            Legal, Fácil y Accesible.
           </h2>
-          <Link href="/chat" className={styles.boton}>
-            <Image src="/images/cerebro_outline.png" alt="Cerebro" width={200} height={200} />
+          <Link href="/home-user" className={styles.boton}>
+            <Image src="/images/cerebro_button.png" alt="Cerebro" width={20} height={20} />
             Consulta con nuestra I.A.
           </Link>
         </div>
 
         <div className={styles.acciones}>
           <div className={styles.accion}>
-            <Image src="/images/crear_contrato.png" alt="Crear Contrato" width={200} height={200} />
+            <Image src="/images/crearContrato.png" alt="Crear Contrato" width={100} height={100} />
             <h3>Crear Contrato</h3>
             <p>
               Crea un contrato con nuestra I.A.
             </p>
           </div>
           <div className={styles.accion}>
-            <Image src="/images/estrategia_juridica.png" alt="Estrategia Juridica" width={200} height={200} />
+            <Image src="/images/estrategiaJuridica.png" alt="Estrategia Juridica" width={100} height={100} />
             <h3>Crea una Estrategia Juridica</h3>
             <p>
               Pregunta, asesorate y crea la mejor estrategia para tu caso
             </p>
           </div>
           <div className={styles.accion}>
-            <Image src="/images/contacto_abogado.png" alt="Contacto Abogado" width={200} height={200} />
+            <Image src="/images/contactoAbogados.png" alt="Contacto Abogado" width={100} height={100} />
             <h3>Contacta a un Abogado</h3>
             <p>
               Contacta a un abogado para que te asesore y de seguimiento a tu caso
@@ -74,7 +76,6 @@ export default function Home() {
         </div>
 
         <div className={styles.acerca}>
-          <h2>Acerca de LegalTech</h2>
 
           <div className={styles.caracteristicas}>
             <div className={styles.caracteristica}>
@@ -103,15 +104,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <p>
-          &copy; {new Date().getFullYear()} LegalTech. Todos los derechos reservados.
-        </p>
-        <Link href="/privacy">Politica de Privacidad</Link>
-        <Link href="/terms">Terminos y Condiciones</Link>
-        <Link href="/contact">Contacto</Link>
-        <Link href="/about">Acerca de LegalTech</Link>
-      </footer>
+      <Footer />
     </>
   );
 }
