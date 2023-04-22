@@ -8,9 +8,9 @@ export default function Footer() {
         &copy; {new Date().getFullYear()} LegalAI. Todos los derechos reservados.
       </p>
       <Link href="/#">Politica de Privacidad</Link>
-      <Link href="/terms">Terminos y Condiciones</Link>
-      <Link href="/contact">Contacto</Link>
-      <Link href="/about">Acerca de LegalAI</Link>
+      <Link href="/#">Terminos y Condiciones</Link>
+      <Link href="/#">Contacto</Link>
+      <Link href="/#">Acerca de LegalAI</Link>
     </footer>
   );
 }
