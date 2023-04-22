@@ -1,4 +1,22 @@
 .footer {
+    display: flex;
     background-color: #0F4C75;
     color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+
 }

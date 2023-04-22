@@ -18,18 +18,16 @@ export default function HomeUser() {
     setMessages([...messages, { role: "user", content: message }]);
     setMessage("");
     setLoading(true);
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message }),
+    });
 
-    // const response = await fetch("/api/chat", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ message }),
-    // });
-
-    // const body = await response.json();
-    
-    // console.log(body);
+    const body = await response.json();
+    console.log(body);
 
     // setMessages([...messages, { role: "assistant", content: body.message }]);
     setLoading(false);
@@ -58,15 +56,13 @@ export default function HomeUser() {
       </header>
 
       <main>
-        <div className={styles.nuevoChat}></div>
-                
         <div className={styles.chat}>
           {messages.length === 0 &&
             <div className={styles.chatBackground}>
               <Link href="/abogados" className={styles.goAbogados}>
                 Contratar un abogado
               </Link>
-              <h2>Nuevo Chat</h2>
+              <h2 className={styles.nuevoChat}>Nuevo Chat</h2>
               <h3>Legal, Facil y Accesible</h3>
               <div className={styles.ejemplos}>
                 <div className={styles.ejemplo}>
@@ -107,7 +103,7 @@ export default function HomeUser() {
             </button>
           </form>
         </div>
-      
+
         <p className={styles.terminos}>
           *Al usar este Chat, aceptas nuestros términos y condiciones de uso, que puedes consultar <span>aquí</span>.
         </p>

@@ -55,6 +55,7 @@
 }
 
 .goAbogados{
+       position: absolute;
         padding: 5px;
         background-color: #3282B8;
         color: #1B262C;
@@ -70,4 +71,17 @@
 
 .ejemplos{
     
+}
+
+.nuevoChat{
+    display: block;
+    justify-content: center;
+}
+
+.chatForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
 }
