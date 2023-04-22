@@ -19,7 +19,7 @@ export default function Linkedin() {
 
       <Header>
         <HeaderLink href="/casos" valor="Casos" />
-        <HeaderLink href="/documentos" valor="Documentos solicitados" />
+        <HeaderLink href="/linkedin/#" valor="Documentos solicitados" />
         <Image src="https://api.dicebear.com/6.x/thumbs/svg?seed=Cleo" alt="User" width={40} height={40} className={styles.userImage} />
       </Header>
       
