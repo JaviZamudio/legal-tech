@@ -1,0 +1,59 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #1B262C;
+    color: white;
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        .logoTitle {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 0;
+            padding: 0;
+            color: var(--primary);
+        }
+    }
+
+    .userImage{
+        border-radius: 50%;
+        object-fit: cover;
+        margin-left: 1rem;
+    }
+    
+}
+
+.mainContainer{
+    display: flex;
+    margin: 5px 30px 10px 5px;
+
+    .contenedor{
+        background-color: #bbe1fa;
+        width: 25%;
+        margin-left: 2.5%;
+        margin-right: 80px;
+    }
+    
+    .tarjetas{
+        background-color: #f0f0f0;
+        width: 70%;
+        height: 500px;
+        margin-right: 2.5%;
+    }
+}
