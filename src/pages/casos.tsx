@@ -45,7 +45,7 @@ export default function Casos() {
       </header> */}
       <Header>
         <HeaderLink href="/casos" valor="Casos" />
-        <HeaderLink href="/##" valor="Documentos Solicitados" />
+        <HeaderLink href="/casos/#" valor="Documentos Solicitados" />
         <Image src="https://api.dicebear.com/6.x/thumbs/svg?seed=Bandit" alt="User" width={40} height={40} className={styles.userImage} />
       </Header>
 
