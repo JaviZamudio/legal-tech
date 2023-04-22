@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "@/styles/Linkedin.module.scss";
+import styles from "@/styles/linkedin.module.scss";
 import { useState } from "react";
 import Footer from "@/components/Footer";
 import Header, { HeaderLink } from "@/components/Header";

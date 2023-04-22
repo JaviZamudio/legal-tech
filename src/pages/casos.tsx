@@ -2,7 +2,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "@/styles/Casos.module.scss";
+import styles from "@/styles/casos.module.scss";
 import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 import Header, { HeaderLink } from "@/components/Header";
