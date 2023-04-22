@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>LegalTech</title>
+        <title>LegalAI</title>
         <meta name="description" content="Sitio para consulta inteligente y resolucion de problemas legales" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/images/Logo.png" />

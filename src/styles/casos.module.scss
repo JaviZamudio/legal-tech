@@ -42,12 +42,72 @@
 .aside{
     display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap;
     flex-direction: column;
     padding: 2rem 0 0 4rem;
     font-size: 1.2rem;
     line-height: 3rem;
 
+    .filtro{
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        width: 100px;
+        justify-content: space-between;
+        .checkbox{
+            display: flex;
+            flex-direction: row;
+            align-self: flex-start;
+            background-color: #c9c9c9;
+            margin-top: 5px;
+            margin-left: 10px;
+            width: 15px;
+            height: 15px;
+        }
+    }
+}
+
+.notification {
+    position: absolute;
+    top: 110px;
+    right: 30px;
+    background-color: #1B262C;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    display: none;
+
+    animation: slideOut 0.5s ease-in-out;
+
+    .notificationTitle {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 0;
+        padding: 0;
+    }
+
+    &.show {
+        display: block;
+        
+        animation: slideIn 0.5s ease-in-out;
+    }
+
+    @keyframes slideOut {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(100%);
+        }
+    }
+
+    @keyframes slideIn {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
 }
 
 .mainContainer {

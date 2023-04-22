@@ -9,7 +9,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
       <Link href="/" className={styles.logo}>
         <Image src="/images/Logo.png" alt="Logo" width={60} height={60} />
         <h1 className={styles.logoTitle}>
-          LegalTech
+          LegalAI
         </h1>
       </Link>
       <nav>
