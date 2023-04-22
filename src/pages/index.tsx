@@ -4,6 +4,7 @@ import styles from "@/styles/Home.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import Header, { HeaderLink } from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,24 +18,10 @@ export default function Home() {
         <link rel="icon" href="/images/Logo.png" />
       </Head>
 
-      <header className={styles.header}>
-        <Link href="/" className={styles.logo}>
-          <Image src="/images/Logo.png" alt="Logo" width={60} height={60} />
-          <h1 className={styles.logoTitle}>
-            LegalTech
-          </h1>
-        </Link>
-        <nav>
-          <ul>
-            <li>
-              <Link href="/login">Iniciar Sesion</Link>
-            </li>
-            <li>
-              <Link href="/register">Registrarse</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Header>
+        <HeaderLink href="/#" valor="Iniciar Sesion" />
+        <HeaderLink href="/##" valor="Registrarse" />
+      </Header>
 
       <main className={styles.main}>
         <div className={styles.hero}>

@@ -31,29 +31,96 @@
         }
     }
 
-    .userImage{
+    .userImage {
         border-radius: 50%;
         object-fit: cover;
         margin-left: 1rem;
     }
-    
+
 }
 
-.mainContainer{
+.mainContainer {
     display: flex;
-    margin: 5px 30px 10px 5px;
+    margin: 20px 30px 10px 10px;
 
-    .contenedor{
+    .contenedor {
         background-color: #bbe1fa;
         width: 25%;
         margin-left: 2.5%;
-        margin-right: 80px;
+        margin-right: 30px;
+
+        .informacion{
+            display: flex;
+            margin-left: 10%;
+            margin-top: 20%;
+            flex-direction: column;
+
+            .valoracion{
+                display: flex;
+                flex-direction: row;
+                margin-top: 10px;
+                p{
+                    margin-left: 5px;
+                }
+            }
+
+            .infoFiltro{
+                display: flex;
+                flex-direction: column;
+                .filtros{
+                    display: flex;
+                    flex-direction: row;
+                    text-align: center;
+                    width: 100px;
+                    justify-content: space-between;
+                    .checkbox{
+                        display: flex;
+                        flex-direction: column;
+                        align-self: flex-start;
+                        background-color: #c9c9c9;
+                        margin-top: 5px;
+                        margin-left: 10px;
+                        width: 15px;
+                        height: 15px;
+                        
+                    }
+                }
+                
+                
+            }
+     }
     }
-    
-    .tarjetas{
+
+    .tarjetas {
         background-color: #f0f0f0;
-        width: 70%;
-        height: 500px;
+        display: flex;
+        width: 80%;
         margin-right: 2.5%;
+        flex-direction: column;
+        overflow: auto;
+
+        .tarjeta {  
+            display: flex;
+            border: 1px solid #dfdfdd;
+            background-color: #f0f0f0f0;
+            width: 100%;
+
+            .images{
+                display:flex;
+                flex-direction: column;
+                border: 1px solid #dfdfdd
+            }
+            .datos{
+                display:flex;
+                flex-direction: column;
+                margin-left: 20px;
+                margin-top: 20px;
+
+            .estrella{
+                display: flex;
+            }
+            }
+           
+        }
     }
 }
